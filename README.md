@@ -1,5 +1,5 @@
 # FileChooser Air Native Extension (Android)
-FileChooser is a very easy to work extension to let you choose a file from your sdcard to be able to use it inside your Air project. you can use the choose method and pass the type of file you need by passing its mimetype. *** / *** for example means any file in any extension! but **image / *** means any image file while **image / png** means any png image file!
+FileChooser is a very easy to work extension to let you choose a file from your sdcard to be able to use it inside your Air project. you can use the choose method and pass the type of file you need by passing its mimetype. * / * for example means any file in any extension! but image/* means any image file while image/png means any png image file!
 
 depending on the Android version of the target device, this extension will work differently to make sure it is using the latest features of the currently running Android! try it right now and run it on different devices to see how easy and straight forward it is.
 
