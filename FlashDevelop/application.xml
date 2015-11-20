@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<application xmlns="http://ns.adobe.com/air/application/16.0">
+<application xmlns="http://ns.adobe.com/air/application/18.0">
   <id>com.doitflash.exFileBrowser</id>
-  <versionNumber>2.0</versionNumber>
+  <versionNumber>3.9</versionNumber>
   <supportedProfiles>mobileDevice</supportedProfiles>
   <filename>exFileBrowser</filename>
-  <name>exFileBrowser</name>
+  <name>file picker</name>
   <android>
     <manifestAdditions>
 		<![CDATA[<manifest android:installLocation="auto">
@@ -28,6 +28,38 @@
 		
 </manifest>]]></manifestAdditions>
   </android>
+   <iPhone>
+    <!--https://developer.apple.com/library/ios/documentation/general/reference/infoplistkeyreference/Articles/iPhoneOSKeys.html-->
+    <!--http://help.adobe.com/en_US/air/build/WSfffb011ac560372f7e64a7f12cd2dd1867-8000.html-->
+    <!-- A list of plist key/value pairs to be added to the application Info.plist -->
+    <InfoAdditions>
+	
+	<![CDATA[
+		<!-- iOS 7.1 is the minimum device requirement for gcm to work -->
+		<key>MinimumOSVersion</key>
+		<string>7.1</string>
+		
+		<key>UIStatusBarStyle</key>
+		<string>UIStatusBarStyleBlackOpaque</string>
+		
+		<key>UIRequiresPersistentWiFi</key>
+		<string>NO</string>
+		
+		<key>UIPrerenderedIcon</key>
+		<true />
+		
+		<key>UIDeviceFamily</key>
+		<array>
+			<string>1</string>
+			<string>2</string>
+		</array>
+	]]>
+		
+	</InfoAdditions>
+		
+    <requestedDisplayResolution>high</requestedDisplayResolution>
+	
+	</iPhone>
   <initialWindow>
     <title>exFileBrowser</title>
     <content>exFileBrowser.swf</content>
@@ -46,7 +78,6 @@
     <image512x512>icons/icon_512.png</image512x512>
   </icon>
   <extensions>
-    <extensionID>com.doitflash.air.extensions.fileBrowser</extensionID>
-	<extensionID>com.doitflash.air.extensions.dependency</extensionID>
+    <extensionID>com.myflashlab.air.extensions.fileBrowser</extensionID>
   </extensions>
 </application>

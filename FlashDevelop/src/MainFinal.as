@@ -1,7 +1,7 @@
 package 
 {
-	import com.doitflash.air.extensions.fileChooser.FileChooser
-	import com.doitflash.air.extensions.fileChooser.FileChooserEvent;
+	import com.myflashlab.air.extensions.fileChooser.FileChooser
+	import com.myflashlab.air.extensions.fileChooser.FileChooserEvent;
 	import flash.utils.setTimeout;
 	
 	import com.doitflash.consts.Direction;

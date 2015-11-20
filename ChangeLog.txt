@@ -1,0 +1,6 @@
+FileBrowser Adobe Air Native Extension
+
+
+May 06, 2013	>> V1.0: 	beginning of the journey!
+Oct 15, 2015	>> V3.0:	Added iOS support
+Nov 03, 2015	>> V3.9:	doitflash devs merged into MyFLashLab Team.
