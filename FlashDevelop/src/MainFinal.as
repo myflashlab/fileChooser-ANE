@@ -159,6 +159,9 @@ package
 		
 		private function init():void
 		{
+			// required only if you are a member of the club
+			FileChooser.clubId = "paypal-address-you-used-to-join-the-club";
+			
 			_ex = new FileChooser();
 			_ex.addEventListener(FileChooserEvent.RESULT, onResult);
 			_ex.addEventListener(FileChooserEvent.ERROR, onError);
