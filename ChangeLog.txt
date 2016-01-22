@@ -2,6 +2,22 @@ FileBrowser Adobe Air Native Extension
 
 
 May 06, 2013	>> V1.0: 	beginning of the journey!
-Oct 15, 2015	>> V3.0:	Added iOS support
+Oct 15, 2015	>> V3.0:	Added iOS support (for picking images only at the moment)
 Nov 03, 2015	>> V3.9:	doitflash devs merged into MyFLashLab Team.
 Dec 20, 2015 	>> V3.9.1: 	minor bug fixes
+
+Jan 21, 2016	>> V4.0.0:	Now you can optionally resize an image with native speed as soon as you pick an image.
+							simply pass in an object like this _ex.choose("image/*", "pick an image!", {width:500, height:500, quality:50});
+							how you get the image path in FileChooserEvent.RESULT has also changed a bit as follow:
+							private function onResult(e:FileChooserEvent):void
+							{
+								var originalFile:File = e.param.original;
+								
+								// e.param.resized is only available if you are picking an image and have specified the resize object for it.
+								var resizedFile:File = e.param.resized;
+							}
+							
+							bypassing xCode 7.2 bug causing iOS conflict when compiling with AirSDK 20 without waiting on Adobe or Apple to fix the problem.
+							This is a must have upgrade for your app to make sure you can compile multiple ANEs in your project with AirSDK 20 or greater.
+							https://forums.adobe.com/thread/2055508
+							https://forums.adobe.com/message/8294948

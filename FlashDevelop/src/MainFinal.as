@@ -2,6 +2,8 @@ package
 {
 	import com.myflashlab.air.extensions.fileChooser.FileChooser
 	import com.myflashlab.air.extensions.fileChooser.FileChooserEvent;
+	import flash.display.Loader;
+	import flash.net.URLRequest;
 	import flash.utils.setTimeout;
 	
 	import com.doitflash.consts.Direction;
@@ -101,7 +103,8 @@ package
 			_list.vDirection = Direction.TOP_TO_BOTTOM;
 			_list.space = BTN_SPACE;
 			
-			init();
+			if (stage) init();
+			else addEventListener(Event.ADDED_TO_STAGE, init);
 			onResize();
 		}
 		
@@ -157,7 +160,7 @@ package
 			}
 		}
 		
-		private function init():void
+		private function init(e:Event=null):void
 		{
 			// required only if you are a member of the club
 			FileChooser.clubId = "paypal-address-you-used-to-join-the-club";
@@ -172,14 +175,29 @@ package
 			
 			function selectImage(e:MouseEvent):void
 			{
-				_ex.choose("image/*", "pick an image!");
+				/**
+				 * 	you may optionally resize the selected image while keeping the aspect ratio. if so, you can simply
+				 * 	pass an object like {width:500, height:500, quality:50} as the third parameter. The extension will 
+				 * 	generate a new jpg file with the max size width/height dimensions while keeping the image aspect ratio.
+				 * 	
+				 * 	if you wish to use the original image, you can simply remove this third parameter or pass null.
+				 * 	
+				 * 	NOTICE: you must use the resizing object when you are selecting an image file ONLY. trying this object
+				 * 	on other file formats will crash the app of course.
+				 */
+				
+				// to return the original image only
+				//_ex.choose("image/*", "pick an image!");
+				
+				// to return the original and a resized image
+				_ex.choose("image/*", "pick an image!", {width:500, height:500, quality:50});
 			}
 			
 			// -------------------------
 			
-			var btn2:MySprite = createBtn("select file!");
+			var btn2:MySprite = createBtn("select file!"); // NOT SUPPORTED ON iOS
 			btn2.addEventListener(MouseEvent.CLICK, selectFile);
-			_list.add(btn2);
+			if(_ex.os != FileChooser.IOS) _list.add(btn2);
 			
 			function selectFile(e:MouseEvent):void
 			{
@@ -188,9 +206,9 @@ package
 			
 			// -------------------------
 			
-			var btn3:MySprite = createBtn("select video!");
+			var btn3:MySprite = createBtn("select video!"); // NOT SUPPORTED ON iOS
 			btn3.addEventListener(MouseEvent.CLICK, selectVideo);
-			_list.add(btn3);
+			if(_ex.os != FileChooser.IOS)_list.add(btn3);
 			
 			function selectVideo(e:MouseEvent):void
 			{
@@ -199,22 +217,37 @@ package
 			
 			// -------------------------
 			
-			var btn4:MySprite = createBtn("select text file!");
+			var btn4:MySprite = createBtn("select text file!"); // NOT SUPPORTED ON iOS
 			btn4.addEventListener(MouseEvent.CLICK, selectText);
-			_list.add(btn4);
+			if(_ex.os != FileChooser.IOS)_list.add(btn4);
 			
 			function selectText(e:MouseEvent):void
 			{
 				_ex.choose("text/*", "pick a text file!");
 			}
+			
+			onResize();
 		}
 		
 		private function onResult(e:FileChooserEvent):void
 		{
-			var file:File = e.param as File;
-			C.log("file.name = " + file.name);
-			C.log("file.extension = " + file.extension);
-			C.log("file.size = " + FileSizeConvertor.size(file.size));
+			var originalFile:File = e.param.original;
+			
+			C.log("original file.name = " + originalFile.name);
+			C.log("original file.extension = " + originalFile.extension);
+			C.log("original file.size = " + FileSizeConvertor.size(originalFile.size));
+			C.log("");
+			
+			// e.param.resized is only available if you are picking an image and have specified the resize object for it.
+			var resizedFile:File = e.param.resized;
+			if (resizedFile) 
+			{
+				C.log("resized file.name = " + resizedFile.name);
+				C.log("resized file.extension = " + resizedFile.extension);
+				C.log("resized file.size = " + FileSizeConvertor.size(resizedFile.size));
+				C.log("resized path = " + resizedFile.url);
+			}
+			
 			C.log("------------------------------");
 		}
 		

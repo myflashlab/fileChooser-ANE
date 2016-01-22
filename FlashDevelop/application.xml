@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<application xmlns="http://ns.adobe.com/air/application/19.0">
+<application xmlns="http://ns.adobe.com/air/application/20.0">
   <id>com.doitflash.exFileBrowser</id>
-  <versionNumber>3.9.1</versionNumber>
+  <versionNumber>4.0.0</versionNumber>
   <supportedProfiles>mobileDevice</supportedProfiles>
   <filename>exFileBrowser</filename>
   <name>file picker</name>
@@ -11,7 +11,6 @@
 		
 		<uses-permission android:name="android.permission.INTERNET" />
 		<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-		<uses-permission android:name="android.permission.WAKE_LOCK" />
 		
 		<application android:hardwareAccelerated="true" android:allowBackup="true">
 			
