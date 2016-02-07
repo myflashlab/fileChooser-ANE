@@ -1,4 +1,4 @@
-# FileChooser ANE V4.0.1 (Android+iOS)
+# FileChooser ANE V4.0.2 (Android+iOS)
 FileChooser is a very easy to work with extension and lets you choose a file from your device and use it inside your Air project. you can use the choose method and pass the type of file you need by passing its mimetype. * / * for example means any file with any mimetype! but image/* means any image file while image/png means any png image file! on iOS, due to the OS limitations, no matter what input you set, it will allow you to pick images only at the moment. (in future versions, we will support picking video files on iOS too)
 
 This extension can also optionally resize the picked image as fast as a few milliseconds for you so you don't have to load a huge image into your app!
