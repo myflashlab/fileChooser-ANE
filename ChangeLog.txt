@@ -1,5 +1,9 @@
 FileBrowser Adobe Air Native Extension
 
+*Feb 07, 2016 - V4.0.2*
+* Fixed missing onError dispatch on Android platform when no file was selected by the user
+
+
 *Feb 04, 2016 - V4.0.1*
 * Fixed resizing/scaling of images in Android and iOS
 

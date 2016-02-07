@@ -63,6 +63,10 @@ on the iOS side, the extension will open the native ImagePicker lib which is bas
 You also have the option to resize the images because in a real life scenario you surely don't want to load a big image like 5MB into your app, right? Although you can resize the picked image in flash and maybe with using threads (Actionscript workers) but it will be a VERY slow process. so we decided to put a native image scaler inside the ```choose``` method to scale down the selected image with keeping the aspect ratio untouched. This will make working with this extension very exceptional.
 
 # Changelog
+*Feb 07, 2016 - V4.0.2*
+* Fixed missing onError dispatch on Android platform when no file was selected by the user
+
+
 *Feb 04, 2016 - V4.0.1*
 * Fixed resizing/scaling of images in Android and iOS
 
