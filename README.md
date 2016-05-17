@@ -3,6 +3,9 @@ FileChooser is a very easy to work with extension and lets you choose a file fro
 
 This extension can also optionally resize the picked image as fast as a few milliseconds for you so you don't have to load a huge image into your app!
 
+# asdoc
+[find the latest asdoc for this ANE here.](http://myflashlab.github.io/asdoc/com/myflashlab/air/extensions/fileChooser/package-detail.html)
+
 # Demo .apk
 you may like to see the ANE in action? [Download demo .apk](https://github.com/myflashlab/fileChooser-ANE/tree/master/FlashDevelop/dist)
 
