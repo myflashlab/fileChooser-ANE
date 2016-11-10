@@ -1,5 +1,5 @@
-# FileChooser ANE V4.0.2 (Android+iOS)
-FileChooser is a very easy to work with extension and lets you choose a file from your device and use it inside your Air project. you can use the choose method and pass the type of file you need by passing its mimetype. * / * for example means any file with any mimetype! but image/* means any image file while image/png means any png image file! on iOS, due to the OS limitations, no matter what input you set, it will allow you to pick images only at the moment. (in future versions, we will support picking video files on iOS too)
+# FileChooser ANE V4.1.0 (Android+iOS)
+FileChooser is a very easy to work with extension and lets you choose a file from your device and use it inside your AIR project. you can use the choose method and pass the type of file you need by passing its mimetype. * / * for example means any file with any mimetype! but image/* means any image file while image/png means any png image file! on iOS, due to the OS limitations, no matter what input you set, it will allow you to pick images only at the moment. (in future versions, we will support picking video files on iOS too)
 
 This extension can also optionally resize the picked image as fast as a few milliseconds for you so you don't have to load a huge image into your app!
 
@@ -7,12 +7,14 @@ This extension can also optionally resize the picked image as fast as a few mill
 [find the latest asdoc for this ANE here.](http://myflashlab.github.io/asdoc/com/myflashlab/air/extensions/fileChooser/package-detail.html)
 
 # Demo .apk
-you may like to see the ANE in action? [Download demo .apk](https://github.com/myflashlab/fileChooser-ANE/tree/master/FlashDevelop/dist)
+you may like to see the ANE in action? [Download demo .apk](https://github.com/myflashlab/fileChooser-ANE/tree/master/FD/dist)
 
 **NOTICE**: the demo ANE works only after you hit the "OK" button in the dialog which opens. in your tests make sure that you are NOT calling other ANE methods prior to hitting the "OK" button.
-[Download the ANE](https://github.com/myflashlab/fileChooser-ANE/tree/master/FlashDevelop/lib)
+[Download the ANE](https://github.com/myflashlab/fileChooser-ANE/tree/master/FD/lib)
 
-# Air Usage
+# AIR Usage
+For the complete AS3 code usage, see the [demo project here](https://github.com/myflashlab/fileChooser-ANE/blob/master/FD/src/MainFinal.as).
+
 ```actionscript
 import com.myflashlab.air.extensions.fileChooser.FileChooser
 import com.myflashlab.air.extensions.fileChooser.FileChooserEvent;
@@ -38,20 +40,59 @@ function onError(e:FileChooserEvent):void
 }
 ```
 
-# Air .xml manifest
+# AIR .xml manifest
 ```xml
-<activity android:name="com.doitflash.fileBrowser.Chooser" android:theme="@style/Theme.Transparent" />
-```
+<!--
+FOR ANDROID:
+-->
+	<!--The new Permission thing on Android works ONLY if you are targetting Android SDK 23 or higher-->
+	<uses-sdk android:targetSdkVersion="23"/>
 
-on the ios side, make sure to set the min iOS version to 7.1
-```xml
-<key>MinimumOSVersion</key>
-<string>7.1</string>
+	<activity android:name="com.doitflash.fileBrowser.Chooser" android:theme="@style/Theme.Transparent" />
+
+	
+	
+<!--
+FOR iOS:
+-->
+	<key>MinimumOSVersion</key>
+	<string>7.1</string>
+
+
+
+
+<!--
+Embedding the ANE:
+-->
+  <extensions>
+	<extensionID>com.myflashlab.air.extensions.fileBrowser</extensionID>
+	
+	<!-- Required if you are targeting AIR 24+ and have to take care of Permissions mannually -->
+	<extensionID>com.myflashlab.air.extensions.permissionCheck</extensionID>
+	
+	<!-- The following dependency ANEs are only required when compiling for Android -->
+	<extensionID>com.myflashlab.air.extensions.dependency.androidSupport</extensionID>
+	<extensionID>com.myflashlab.air.extensions.dependency.overrideAir</extensionID>
+  </extensions>
 ```
 
 # Requirements
+* This ANE is dependent on **androidSupport.ane** and **overrideAir.ane**. Download them from [here](https://github.com/myflashlab/common-dependencies-ANE).
 * Android SDK 10 or higher
 * iOS 7.1 or higher
+
+# Permissions
+If you are targeting AIR 24 or higher, you need to [take care of the permissions mannually](http://www.myflashlabs.com/adobe-air-app-permissions-android-ios/). Below are the list of Permissions this ANE might require. (Note: *Necessary Permissions* are those that the ANE will NOT work without them and *Optional Permissions* are those which are needed only if you are using some specific features in the ANE.)
+
+Check out the demo project available at this repository to see how we have used our [PermissionCheck ANE](http://www.myflashlabs.com/product/native-access-permission-check-settings-menu-air-native-extension/) to ask for the permissions.
+
+**Necessary Permissions:**  
+
+1. PermissionCheck.SOURCE_STORAGE
+
+**Optional Permissions:**  
+none  
+
 
 # Commercial Version
 http://www.myflashlabs.com/product/file-image-pick-ane-adobe-air-native-extension/
@@ -66,6 +107,10 @@ on the iOS side, the extension will open the native ImagePicker lib which is bas
 You also have the option to resize the images because in a real life scenario you surely don't want to load a big image like 5MB into your app, right? Although you can resize the picked image in flash and maybe with using threads (Actionscript workers) but it will be a VERY slow process. so we decided to put a native image scaler inside the ```choose``` method to scale down the selected image with keeping the aspect ratio untouched. This will make working with this extension very exceptional.
 
 # Changelog
+*Nov 10, 2016 - V4.1.0*
+* Optimized for Android manual permissions if you are targeting AIR SDK 24+
+* From now on, this ANE will depend on androidSupport.ane and overrideAir.ane on the Android side
+
 *Feb 07, 2016 - V4.0.2*
 * Fixed missing onError dispatch on Android platform when no file was selected by the user
 

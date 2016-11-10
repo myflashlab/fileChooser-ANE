@@ -2,7 +2,11 @@ package
 {
 	import com.myflashlab.air.extensions.fileChooser.FileChooser
 	import com.myflashlab.air.extensions.fileChooser.FileChooserEvent;
+	import com.myflashlab.air.extensions.nativePermissions.PermissionCheck;
+	
+	import flash.display.Bitmap;
 	import flash.display.Loader;
+	import flash.geom.Rectangle;
 	import flash.net.URLRequest;
 	import flash.utils.setTimeout;
 	
@@ -51,6 +55,7 @@ package
 	public class MainFinal extends Sprite 
 	{
 		private var _ex:FileChooser;
+		private var _exPermissions:PermissionCheck = new PermissionCheck();
 		
 		private const BTN_WIDTH:Number = 150;
 		private const BTN_HEIGHT:Number = 60;
@@ -103,9 +108,7 @@ package
 			_list.vDirection = Direction.TOP_TO_BOTTOM;
 			_list.space = BTN_SPACE;
 			
-			if (stage) init();
-			else addEventListener(Event.ADDED_TO_STAGE, init);
-			onResize();
+			checkPermissions();
 		}
 		
 		private function onInvoke(e:InvokeEvent):void
@@ -160,11 +163,35 @@ package
 			}
 		}
 		
+		private function checkPermissions():void
+		{
+			// first you need to make sure you have access to the Strorage if you are on Android?
+			var permissionState:int = _exPermissions.check(PermissionCheck.SOURCE_STORAGE);
+			
+			if (permissionState == PermissionCheck.PERMISSION_UNKNOWN || permissionState == PermissionCheck.PERMISSION_DENIED)
+			{
+				_exPermissions.request(PermissionCheck.SOURCE_STORAGE, onRequestResult);
+			}
+			else
+			{
+				init();
+			}
+			
+			function onRequestResult($state:int):void
+			{
+				if ($state != PermissionCheck.PERMISSION_GRANTED)
+				{
+					C.log("You did not allow the app the required permissions!");
+				}
+				else
+				{
+					init();
+				}
+			}
+		}
+		
 		private function init(e:Event=null):void
 		{
-			// required only if you are a member of the club
-			FileChooser.clubId = "paypal-address-you-used-to-join-the-club";
-			
 			_ex = new FileChooser();
 			_ex.addEventListener(FileChooserEvent.RESULT, onResult);
 			_ex.addEventListener(FileChooserEvent.ERROR, onError);
@@ -246,17 +273,17 @@ package
 				C.log("resized file.extension = " + resizedFile.extension);
 				C.log("resized file.size = " + FileSizeConvertor.size(resizedFile.size));
 				C.log("resized path = " + resizedFile.url);
+				
 			}
 			
 			C.log("------------------------------");
+			
 		}
 		
 		private function onError(e:FileChooserEvent):void
 		{
 			C.log("onError = " + e.param);
 		}
-		
-		
 		
 		
 		

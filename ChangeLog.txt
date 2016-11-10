@@ -1,5 +1,9 @@
 FileBrowser Adobe Air Native Extension
 
+*Nov 10, 2016 - V4.1.0*
+* Optimized for Android manual permissions if you are targeting AIR SDK 24+
+* From now on, this ANE will depend on androidSupport.ane and overrideAir.ane on the Android side
+
 *Feb 07, 2016 - V4.0.2*
 * Fixed missing onError dispatch on Android platform when no file was selected by the user
 
