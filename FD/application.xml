@@ -41,6 +41,10 @@
 		<key>MinimumOSVersion</key>
 		<string>7.1</string>
 		
+		<!--A new feature for iOS 10 submissions requires you to add the 'purpose string' to your app when accessing a user's private data-->
+		<key>NSPhotoLibraryUsageDescription</key>
+		<string>My description about why I need this feature in my app</string>
+		
 		<key>UIStatusBarStyle</key>
 		<string>UIStatusBarStyleBlackOpaque</string>
 		
