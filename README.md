@@ -109,6 +109,11 @@ on the iOS side, the extension will open the native ImagePicker lib which is bas
 You also have the option to resize the images because in a real life scenario you surely don't want to load a big image like 5MB into your app, right? Although you can resize the picked image in flash and maybe with using threads (Actionscript workers) but it will be a VERY slow process. so we decided to put a native image scaler inside the ```choose``` method to scale down the selected image with keeping the aspect ratio untouched. This will make working with this extension very exceptional.
 
 # Changelog
+*Mar 17, 2017 - V4.1.1*
+* Fixed the white screen problem on iOS
+* Updated with the new OverrideAir ANE.
+* Even if you are building for iOS only, you still need to add the OverrideAir dependency.
+
 *Nov 10, 2016 - V4.1.0*
 * Optimized for Android manual permissions if you are targeting AIR SDK 24+
 * From now on, this ANE will depend on androidSupport.ane and overrideAir.ane on the Android side

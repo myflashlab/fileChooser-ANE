@@ -1,5 +1,10 @@
 FileBrowser Adobe Air Native Extension
 
+*Mar 17, 2017 - V4.1.1*
+* Fixed the white screen problem on iOS
+* Updated with the new OverrideAir ANE.
+* Even if you are building for iOS only, you still need to add the OverrideAir dependency.
+
 *Nov 10, 2016 - V4.1.0*
 * Optimized for Android manual permissions if you are targeting AIR SDK 24+
 * From now on, this ANE will depend on androidSupport.ane and overrideAir.ane on the Android side

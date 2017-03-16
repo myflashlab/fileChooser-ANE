@@ -11,9 +11,9 @@ call bat\SetupApp.bat
 ::goto desktop
 ::goto android-debug
 ::goto android-test
-goto android-captive
+::goto android-captive
 set INTERPRETER=-interpreter
-::goto ios-debug
+goto ios-debug
 ::goto ios-test
 
 :desktop
