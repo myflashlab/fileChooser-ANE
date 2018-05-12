@@ -1,5 +1,8 @@
 FileBrowser Adobe Air Native Extension
 
+*May 12, 2018 - V4.1.4*
+* On Android, the chooser activity used to open in portrait always. This problem is now fixed. And if your app is in landscape, the chooser activity also opens in landscape mode.
+
 *Dec 15, 2017 - V4.1.3*
 * Optimized for [ANE-LAB software](https://github.com/myflashlab/ANE-LAB).
 

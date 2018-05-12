@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<application xmlns="http://ns.adobe.com/air/application/26.0">
+<application xmlns="http://ns.adobe.com/air/application/29.0">
     <id>com.doitflash.exFileBrowser</id>
-    <versionNumber>4.1.3</versionNumber>
+    <versionNumber>4.1.4</versionNumber>
     <supportedProfiles>mobileDevice</supportedProfiles>
     <filename>exFileBrowser</filename>
     <name>file picker</name>
@@ -37,9 +37,9 @@
         <InfoAdditions>
 
             <![CDATA[
-		<!-- iOS 7.1 is the minimum device requirement for gcm to work -->
+
 		<key>MinimumOSVersion</key>
-		<string>7.1</string>
+		<string>8.0</string>
 
 		<!--A new feature for iOS 10 submissions requires you to add the 'purpose string' to your app when accessing a user's private data-->
 		<key>NSPhotoLibraryUsageDescription</key>
@@ -71,8 +71,8 @@
         <content>ex.swf</content>
         <visible>true</visible>
         <fullScreen>true</fullScreen>
-        <autoOrients>false</autoOrients>
-        <aspectRatio>portrait</aspectRatio>
+        <autoOrients>true</autoOrients>
+        <!--<aspectRatio>portrait</aspectRatio>-->
         <renderMode>direct</renderMode>
         <!--<depthAndStencil>true</depthAndStencil>-->
         <!-- required for 3D -->

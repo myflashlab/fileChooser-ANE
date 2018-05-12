@@ -1,4 +1,4 @@
-# FileChooser ANE V4.1.3 (Android+iOS)
+# FileChooser ANE V4.1.4 (Android+iOS)
 FileChooser is a very easy to work with extension and lets you choose a file from your device and use it inside your AIR project. you can use the choose method and pass the type of file you need by passing its mimetype. * / * for example means any file with any mimetype! but image/* means any image file while image/png means any png image file! on iOS, due to the OS limitations, no matter what input you set, it will allow you to pick images only at the moment. (in future versions, we will support picking video files on iOS too)
 
 This extension can also optionally resize the picked image as fast as a few milliseconds for you so you don't have to load a huge image into your app!
@@ -12,8 +12,7 @@ This extension can also optionally resize the picked image as fast as a few mill
 For the complete AS3 code usage, see the [demo project here](https://github.com/myflashlab/fileChooser-ANE/blob/master/AIR/src/MainFinal.as).
 
 ```actionscript
-import com.myflashlab.air.extensions.fileChooser.FileChooser
-import com.myflashlab.air.extensions.fileChooser.FileChooserEvent;
+import com.myflashlab.air.extensions.fileChooser.*;
 
 var _ex:FileChooser = new FileChooser();
 _ex.addEventListener(FileChooserEvent.RESULT, onResult);
@@ -78,7 +77,7 @@ Embedding the ANE:
 * This ANE is dependent on **androidSupport.ane** and **overrideAir.ane**. Download them from [here](https://github.com/myflashlab/common-dependencies-ANE).
 * Android SDK 15+
 * iOS 8.0+
-* AIR SDK 27+
+* AIR SDK 29+
 
 # Permissions
 If you are targeting AIR 24 or higher, you need to [take care of the permissions mannually](http://www.myflashlabs.com/adobe-air-app-permissions-android-ios/). Below are the list of Permissions this ANE might require. (Note: *Necessary Permissions* are those that the ANE will NOT work without them and *Optional Permissions* are those which are needed only if you are using some specific features in the ANE.)
@@ -99,13 +98,16 @@ http://www.myflashlabs.com/product/file-image-pick-ane-adobe-air-native-extensio
 ![file picker ANE](http://www.myflashlabs.com/wp-content/uploads/2015/11/product_adobe-air-ane-extension-file-or-image-picker-595x738.jpg)
 
 # Tech Details
-depending on the Android version of the target device, this extension will work differently to make sure it is using the latest features of the currently running Android! try it right now and run it on different devices to see how easy and straight forward it is.
+depending on the Android version of the target device, this extension will work differently to make sure it is using the latest features of the currently running Android. try it right now and run it on different devices to see how easy and straight forward it is.
 
 on the iOS side, the extension will open the native ImagePicker lib which is basically the same on all different iOS versions.
 
 You also have the option to resize the images because in a real life scenario you surely don't want to load a big image like 5MB into your app, right? Although you can resize the picked image in flash and maybe with using threads (Actionscript workers) but it will be a VERY slow process. so we decided to put a native image scaler inside the ```choose``` method to scale down the selected image with keeping the aspect ratio untouched. This will make working with this extension very exceptional.
 
 # Changelog
+*May 12, 2018 - V4.1.4*
+* On Android, the chooser activity used to open in portrait always. This problem is now fixed. And if your app is in landscape, the chooser activity also opens in landscape mode.
+
 *Dec 15, 2017 - V4.1.3*
 * Optimized for [ANE-LAB software](https://github.com/myflashlab/ANE-LAB).
 

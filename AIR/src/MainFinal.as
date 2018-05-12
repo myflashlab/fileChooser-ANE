@@ -116,7 +116,7 @@ import com.myflashlab.air.extensions.fileChooser.FileChooser
 		
 		private function myDebuggerDelegate($ane:String, $class:String, $msg:String):void
 		{
-			trace("["+$ane+"-"+$class+"]"+$msg);
+			trace("\t"+$ane+": "+$msg);
 		}
 		
 		private function onInvoke(e:InvokeEvent):void
