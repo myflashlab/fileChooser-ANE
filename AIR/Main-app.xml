@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<application xmlns="http://ns.adobe.com/air/application/29.0">
+<application xmlns="http://ns.adobe.com/air/application/30.0">
     <id>com.doitflash.exFileBrowser</id>
-    <versionNumber>4.1.4</versionNumber>
+    <versionNumber>4.1.5</versionNumber>
     <supportedProfiles>mobileDevice</supportedProfiles>
     <filename>exFileBrowser</filename>
     <name>file picker</name>
@@ -11,9 +11,7 @@
 
 		<uses-permission android:name="android.permission.INTERNET" />
 		<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-
-		<!--The new Permission thing on Android works ONLY if you are targetting Android SDK 23 or higher-->
-		<uses-sdk android:targetSdkVersion="23"/>
+        <uses-sdk android:targetSdkVersion="26"/>
 
 		<application android:hardwareAccelerated="true" android:allowBackup="true">
 
@@ -41,7 +39,6 @@
 		<key>MinimumOSVersion</key>
 		<string>8.0</string>
 
-		<!--A new feature for iOS 10 submissions requires you to add the 'purpose string' to your app when accessing a user's private data-->
 		<key>NSPhotoLibraryUsageDescription</key>
 		<string>My description about why I need this feature in my app</string>
 
@@ -70,7 +67,7 @@
         <title>exFileBrowser</title>
         <content>ex.swf</content>
         <visible>true</visible>
-        <fullScreen>true</fullScreen>
+        <fullScreen>false</fullScreen>
         <autoOrients>true</autoOrients>
         <!--<aspectRatio>portrait</aspectRatio>-->
         <renderMode>direct</renderMode>
@@ -94,12 +91,16 @@
 
         <extensionID>com.myflashlab.air.extensions.fileBrowser</extensionID>
 
-        <!-- Required if you are targeting AIR 24+ and have to take care of Permissions mannually -->
         <extensionID>com.myflashlab.air.extensions.permissionCheck</extensionID>
 
-        <!-- download the dependency ANEs from https://github.com/myflashlab/common-dependencies-ANE -->
+        <!-- dependency ANEs https://github.com/myflashlab/common-dependencies-ANE -->
         <extensionID>com.myflashlab.air.extensions.dependency.overrideAir</extensionID>
-        <extensionID>com.myflashlab.air.extensions.dependency.androidSupport</extensionID>
+        <extensionID>com.myflashlab.air.extensions.dependency.androidSupport.core</extensionID>
+        <extensionID>com.myflashlab.air.extensions.dependency.androidSupport.v4</extensionID>
+        <extensionID>com.myflashlab.air.extensions.dependency.googlePlayServices.drive</extensionID>
+        <extensionID>com.myflashlab.air.extensions.dependency.googlePlayServices.base</extensionID>
+        <extensionID>com.myflashlab.air.extensions.dependency.googlePlayServices.basement</extensionID>
+        <extensionID>com.myflashlab.air.extensions.dependency.googlePlayServices.tasks</extensionID>
 
     </extensions>
 </application>

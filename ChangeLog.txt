@@ -1,5 +1,16 @@
 FileBrowser Adobe Air Native Extension
 
+*Sep 22, 2018 - V4.1.5*
+* Removed androidSupport dependency
+* Fixed a bug where Files from GoogleDrive where throwing an exception when selected. From this version, you can pick a file from GoogleDrive to your AIR app with no problem.
+* Introduced new dependencies:
+    * [permissionCheck.ane](https://github.com/myflashlab/PermissionCheck-ANE/)
+    * overrideAir.ane
+    * googlePlayServices_base.ane
+    * googlePlayServices_basement.ane
+    * googlePlayServices_drive.ane
+    * googlePlayServices_tasks.ane
+
 *May 12, 2018 - V4.1.4*
 * On Android, the chooser activity used to open in portrait always. This problem is now fixed. And if your app is in landscape, the chooser activity also opens in landscape mode.
 
