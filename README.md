@@ -1,4 +1,4 @@
-# FileChooser ANE V4.1.5 (Android+iOS)
+# FileChooser ANE V4.1.6 (Android+iOS)
 FileChooser is a very easy to work with extension and lets you choose a file from your device and use it inside your AIR project. you can use the choose method and pass the type of file you need by passing its mimetype. \*/\* for example means any file with any mimetype! but image/\* means any image file while image/png means any png image file! on iOS, due to the OS limitations, no matter what input you set, it will allow you to pick images only at the moment. (in future versions, we will support picking video files on iOS too)
 
 This extension can also optionally resize the picked image as fast as a few milliseconds for you so you don't have to load a huge image into your app!
@@ -99,6 +99,10 @@ http://www.myflashlabs.com/product/file-image-pick-ane-adobe-air-native-extensio
 2. You have the option to resize the images because in a real life scenario you surely don't want to load a big image like 5MB into your app, right? Although you can resize the picked image in flash and maybe with using threads (Actionscript workers) but it will be a VERY slow process. so we decided to put a native image scaler inside the ```choose``` method to scale down the selected image with keeping the aspect ratio untouched. This will make working with this extension very exceptional.
 
 # Changelog
+*Nov 17, 2018 - V4.1.6*
+* Works with OverrideAir ANE V5.6.1 or higher
+* Works with ANELAB V1.1.26 or higher
+
 *Sep 22, 2018 - V4.1.5*
 * Removed androidSupport dependency
 * Fixed a bug where Files from GoogleDrive where throwing an exception when selected. From this version, you can pick a file from GoogleDrive to your AIR app with no problem.

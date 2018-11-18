@@ -163,7 +163,7 @@ public class MainFinal extends Sprite
 	
 	private function checkPermissions():void
 	{
-		// first you need to make sure you have access to the Strorage if you are on Android?
+		// first you need to make sure you have access to the Storage if you are on Android?
 		var permissionState:int = PermissionCheck.check(PermissionCheck.SOURCE_STORAGE);
 		
 		if(permissionState == PermissionCheck.PERMISSION_UNKNOWN || permissionState == PermissionCheck.PERMISSION_DENIED)

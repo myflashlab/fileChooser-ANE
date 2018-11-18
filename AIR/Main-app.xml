@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <application xmlns="http://ns.adobe.com/air/application/30.0">
     <id>com.doitflash.exFileBrowser</id>
-    <versionNumber>4.1.5</versionNumber>
+    <versionNumber>4.1.6</versionNumber>
     <supportedProfiles>mobileDevice</supportedProfiles>
     <filename>exFileBrowser</filename>
     <name>file picker</name>

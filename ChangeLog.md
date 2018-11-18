@@ -1,5 +1,9 @@
 FileBrowser Adobe Air Native Extension
 
+*Nov 17, 2018 - V4.1.6*
+* Works with OverrideAir ANE V5.6.1 or higher
+* Works with ANELAB V1.1.26 or higher
+
 *Sep 22, 2018 - V4.1.5*
 * Removed androidSupport dependency
 * Fixed a bug where Files from GoogleDrive where throwing an exception when selected. From this version, you can pick a file from GoogleDrive to your AIR app with no problem.
