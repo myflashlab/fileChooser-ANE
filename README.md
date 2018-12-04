@@ -89,9 +89,9 @@ Necessary | Optional
 
 
 # Commercial Version
-http://www.myflashlabs.com/product/file-image-pick-ane-adobe-air-native-extension/
+https://www.myflashlabs.com/product/file-image-pick-ane-adobe-air-native-extension/
 
-![file picker ANE](https://www.myflashlabs.com/wp-content/uploads/2015/11/product_adobe-air-ane-extension-file-or-image-picker-595x738.jpg)
+[![file picker ANE](https://www.myflashlabs.com/wp-content/uploads/2015/11/product_adobe-air-ane-extension-file-or-image-picker-2018-595x738.jpg)](https://www.myflashlabs.com/product/file-image-pick-ane-adobe-air-native-extension/)
 
 # Tech Details
 1. on the iOS side, the extension will open the native ImagePicker lib which is basically the same on all different iOS versions.
