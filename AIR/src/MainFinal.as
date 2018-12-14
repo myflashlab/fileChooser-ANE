@@ -60,7 +60,11 @@ public class MainFinal extends Sprite
 	
 	public function MainFinal():void
 	{
-		OverrideAir.enableDebugger(myDebuggerDelegate);
+		// Remove OverrideAir debugger in production builds
+		OverrideAir.enableDebugger(function ($ane:String, $class:String, $msg:String):void
+		{
+			trace($ane+" ("+$class+") "+$msg);
+		});
 		
 		Multitouch.inputMode = MultitouchInputMode.GESTURE;
 		NativeApplication.nativeApplication.addEventListener(Event.ACTIVATE, handleActivate);
@@ -104,11 +108,6 @@ public class MainFinal extends Sprite
 		_list.space = BTN_SPACE;
 		
 		checkPermissions();
-	}
-	
-	private function myDebuggerDelegate($ane:String, $class:String, $msg:String):void
-	{
-		trace("\t" + $ane + ": " + $msg);
 	}
 	
 	private function onInvoke(e:InvokeEvent):void
@@ -221,7 +220,7 @@ public class MainFinal extends Sprite
 		
 		var btn2:MySprite = createBtn("select file!"); // NOT SUPPORTED ON iOS
 		btn2.addEventListener(MouseEvent.CLICK, selectFile);
-		if(_ex.os != FileChooser.IOS) _list.add(btn2);
+		if(OverrideAir.os != OverrideAir.IOS) _list.add(btn2);
 		
 		function selectFile(e:MouseEvent):void
 		{
@@ -232,7 +231,7 @@ public class MainFinal extends Sprite
 		
 		var btn3:MySprite = createBtn("select video!"); // NOT SUPPORTED ON iOS
 		btn3.addEventListener(MouseEvent.CLICK, selectVideo);
-		if(_ex.os != FileChooser.IOS) _list.add(btn3);
+		if(OverrideAir.os != OverrideAir.IOS) _list.add(btn3);
 		
 		function selectVideo(e:MouseEvent):void
 		{
@@ -243,7 +242,7 @@ public class MainFinal extends Sprite
 		
 		var btn4:MySprite = createBtn("select text file!"); // NOT SUPPORTED ON iOS
 		btn4.addEventListener(MouseEvent.CLICK, selectText);
-		if(_ex.os != FileChooser.IOS) _list.add(btn4);
+		if(OverrideAir.os != OverrideAir.IOS) _list.add(btn4);
 		
 		function selectText(e:MouseEvent):void
 		{
