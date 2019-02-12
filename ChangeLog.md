@@ -1,5 +1,10 @@
 FileBrowser Adobe Air Native Extension
 
+*Feb 12, 2019 - V4.2.1*
+* fixed the bug when on iOS, the app's launcher image was shown on iOS 11+ for a few miliseconds
+* When the picker window is open and you take the app to background, the window will be closed now.
+* Added ```isOpen``` property which returns if currently the file-picker window is open or not
+
 *Nov 17, 2018 - V4.1.6*
 * Works with OverrideAir ANE V5.6.1 or higher
 * Works with ANELAB V1.1.26 or higher
