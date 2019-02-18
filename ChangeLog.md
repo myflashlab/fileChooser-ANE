@@ -1,5 +1,8 @@
 FileBrowser Adobe Air Native Extension
 
+*Feb 18, 2019 - V4.2.2*
+* subclassing the ios native imagepicker window to support AIR app's current orientation
+
 *Feb 12, 2019 - V4.2.1*
 * fixed the bug when on iOS, the app's launcher image was shown on iOS 11+ for a few miliseconds
 * When the picker window is open and you take the app to background, the window will be closed now.
