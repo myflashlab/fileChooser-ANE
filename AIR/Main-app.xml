@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<application xmlns="http://ns.adobe.com/air/application/31.0">
+<application xmlns="http://ns.adobe.com/air/application/32.0">
     <id>com.doitflash.exFileBrowser</id>
-    <versionNumber>4.1.6</versionNumber>
+    <versionNumber>4.2.21</versionNumber>
     <supportedProfiles>mobileDevice</supportedProfiles>
     <filename>exFileBrowser</filename>
     <name>file picker</name>
@@ -34,7 +34,7 @@
             <![CDATA[
 
 		<key>MinimumOSVersion</key>
-		<string>8.0</string>
+		<string>10.0</string>
 
 		<key>NSPhotoLibraryUsageDescription</key>
 		<string>My description about why I need this feature in my app</string>
@@ -66,7 +66,7 @@
         <visible>true</visible>
         <fullScreen>false</fullScreen>
         <autoOrients>true</autoOrients>
-        <!--<aspectRatio>portrait</aspectRatio>-->
+        <!--<aspectRatio>landscape</aspectRatio>-->
         <renderMode>direct</renderMode>
         <!--<depthAndStencil>true</depthAndStencil>-->
         <!-- required for 3D -->

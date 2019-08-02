@@ -41,6 +41,7 @@ import flash.text.TextFormatAlign;
 import flash.ui.Keyboard;
 import flash.ui.Multitouch;
 import flash.ui.MultitouchInputMode;
+import flash.utils.setTimeout;
 
 /**
  *

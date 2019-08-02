@@ -1,5 +1,10 @@
 FileBrowser Adobe Air Native Extension
 
+*Aug 2, 2019 - V4.2.21*
+* Added Android 64-bit Support
+* Supports iOS 10+
+* Removed **.os** property, use ```OverrideAir.os``` instead
+
 *Feb 18, 2019 - V4.2.2*
 * subclassing the ios native imagepicker window to support AIR app's current orientation
 

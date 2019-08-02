@@ -37,8 +37,6 @@ function onError(e:FileChooserEvent):void
 <!--
 FOR ANDROID:
 -->
-	<uses-sdk android:targetSdkVersion="26"/>
-
 	<activity android:name="com.doitflash.fileBrowser.Chooser" android:theme="@style/Theme.Transparent" />
 
 	
@@ -47,7 +45,7 @@ FOR ANDROID:
 FOR iOS:
 -->
 	<key>MinimumOSVersion</key>
-	<string>8.0</string>
+	<string>10.0</string>
 
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>My description about why I need this feature in my app</string>
@@ -74,7 +72,7 @@ Embedding the ANE:
 
 # Requirements
 * Android SDK 15+
-* iOS 8.0+
+* iOS 10.0+
 * AIR SDK 30+
 
 # Permissions
