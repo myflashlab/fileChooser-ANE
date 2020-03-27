@@ -230,6 +230,17 @@ public class MainFinal extends Sprite
 		
 		// -------------------------
 		
+		var btn22:MySprite = createBtn("select zip file!"); // NOT SUPPORTED ON iOS
+		btn22.addEventListener(MouseEvent.CLICK, selectZipFile);
+		if(OverrideAir.os != OverrideAir.IOS) _list.add(btn22);
+		
+		function selectZipFile(e:MouseEvent):void
+		{
+			_ex.choose("application/zip", "pick a Zip file!");
+		}
+		
+		// -------------------------
+		
 		var btn3:MySprite = createBtn("select video!"); // NOT SUPPORTED ON iOS
 		btn3.addEventListener(MouseEvent.CLICK, selectVideo);
 		if(OverrideAir.os != OverrideAir.IOS) _list.add(btn3);

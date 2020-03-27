@@ -1,101 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
 <application xmlns="http://ns.adobe.com/air/application/32.0">
-    <id>com.doitflash.exFileBrowser</id>
-    <versionNumber>4.2.21</versionNumber>
-    <supportedProfiles>mobileDevice</supportedProfiles>
-    <filename>exFileBrowser</filename>
-    <name>file picker</name>
-    <android>
-        <manifestAdditions>
-            <![CDATA[<manifest android:installLocation="auto">
+  <id>com.doitflash.exFileBrowser</id>
+  <versionNumber>5.0.1</versionNumber>
+  <supportedProfiles>mobileDevice</supportedProfiles>
+  <filename>exFileBrowser</filename>
+  <name>File Picker</name>
 
-		<uses-permission android:name="android.permission.INTERNET" />
-		<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-        <uses-sdk android:targetSdkVersion="26"/>
+  <android>
+    <manifestAdditions>
+      <![CDATA[
+          <manifest android:installLocation="auto">
 
-		<application android:hardwareAccelerated="true" android:allowBackup="true">
+            <uses-permission android:name="android.permission.INTERNET" />
+            <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+                <uses-sdk android:targetSdkVersion="26"/>
 
-			<activity android:hardwareAccelerated="false">
-				<intent-filter>
-					<action android:name="android.intent.action.MAIN" />
-					<category android:name="android.intent.category.LAUNCHER" />
-				</intent-filter>
-			</activity>
+            <application android:hardwareAccelerated="true" android:allowBackup="true">
 
-			<activity android:name="com.doitflash.fileBrowser.Chooser" android:theme="@style/Theme.Transparent" />
+              <activity android:hardwareAccelerated="false">
+                <intent-filter>
+                  <action android:name="android.intent.action.MAIN" />
+                  <category android:name="android.intent.category.LAUNCHER" />
+                </intent-filter>
+              </activity>
 
-		</application>
+              <activity android:name="com.doitflash.fileBrowser.Chooser" android:theme="@style/Theme.Transparent" />
 
-</manifest>]]></manifestAdditions>
-    </android>
-    <iPhone>
-        <InfoAdditions>
+            </application>
 
-            <![CDATA[
+          </manifest>
+          ]]>
+    </manifestAdditions>
+  </android>
 
-		<key>MinimumOSVersion</key>
-		<string>10.0</string>
+  <iPhone>
+    <InfoAdditions>
+      <![CDATA[
+        <key>MinimumOSVersion</key>
+        <string>10.0</string>
 
-		<key>NSPhotoLibraryUsageDescription</key>
-		<string>My description about why I need this feature in my app</string>
+        <key>NSPhotoLibraryUsageDescription</key>
+        <string>My description about why I need this feature in my app</string>
 
-		<key>UIStatusBarStyle</key>
-		<string>UIStatusBarStyleBlackOpaque</string>
+        <key>UIStatusBarStyle</key>
+        <string>UIStatusBarStyleBlackOpaque</string>
 
-		<key>UIRequiresPersistentWiFi</key>
-		<string>NO</string>
+        <key>UIRequiresPersistentWiFi</key>
+        <string>NO</string>
 
-		<key>UIPrerenderedIcon</key>
-		<true />
+        <key>UIPrerenderedIcon</key>
+        <true />
 
-		<key>UIDeviceFamily</key>
-		<array>
-			<string>1</string>
-			<string>2</string>
-		</array>
-	]]>
+        <key>UIDeviceFamily</key>
+        <array>
+          <string>1</string>
+          <string>2</string>
+        </array>
+      ]]>
+    </InfoAdditions>
+  
+    <requestedDisplayResolution>high</requestedDisplayResolution>
+  </iPhone>
+  
+  <initialWindow>
+    <title>exFileBrowser</title>
+    <content>ex.swf</content>
+    <visible>true</visible>
+    <fullScreen>false</fullScreen>
+    <autoOrients>true</autoOrients>
+    <!--<aspectRatio>landscape</aspectRatio>-->
+    <renderMode>direct</renderMode>
+    <!--<depthAndStencil>true</depthAndStencil>-->
+    <!-- required for 3D -->
+    <systemChrome>standard</systemChrome>
+  </initialWindow>
 
-        </InfoAdditions>
+  <icon>
+    <image36x36>icons/icon_36.png</image36x36>
+    <image48x48>icons/icon_48.png</image48x48>
+    <image72x72>icons/icon_72.png</image72x72>
+    <image96x96>icons/icon_96.png</image96x96>
+    <image144x144>icons/icon_144.png</image144x144>
+    <image192x192>icons/icon_192.png</image192x192>
+    <image512x512>icons/icon_512.png</image512x512>
+    <image1024x1024>icons/icon_1024.png</image1024x1024>
+  </icon>
 
-        <requestedDisplayResolution>high</requestedDisplayResolution>
+  <extensions>
 
-    </iPhone>
-    <initialWindow>
-        <title>exFileBrowser</title>
-        <content>ex.swf</content>
-        <visible>true</visible>
-        <fullScreen>false</fullScreen>
-        <autoOrients>true</autoOrients>
-        <!--<aspectRatio>landscape</aspectRatio>-->
-        <renderMode>direct</renderMode>
-        <!--<depthAndStencil>true</depthAndStencil>-->
-        <!-- required for 3D -->
-        <systemChrome>standard</systemChrome>
-    </initialWindow>
-    <icon>
-        <image36x36>icons/icon_36.png</image36x36>
-        <image48x48>icons/icon_48.png</image48x48>
-        <image72x72>icons/icon_72.png</image72x72>
-        <image96x96>icons/icon_96.png</image96x96>
-        <image144x144>icons/icon_144.png</image144x144>
-        <image192x192>icons/icon_192.png</image192x192>
-        <image512x512>icons/icon_512.png</image512x512>
-        <image1024x1024>icons/icon_1024.png</image1024x1024>
-    </icon>
-    <extensions>
+    <extensionID>com.myflashlab.air.extensions.fileBrowser</extensionID>
+    <extensionID>com.myflashlab.air.extensions.permissionCheck</extensionID>
 
-        <extensionID>com.myflashlab.air.extensions.fileBrowser</extensionID>
+    <!-- dependency ANEs https://github.com/myflashlab/common-dependencies-ANE -->
+    <extensionID>com.myflashlab.air.extensions.dependency.overrideAir</extensionID>
+    <extensionID>com.myflashlab.air.extensions.dependency.androidx.core</extensionID>
+    <extensionID>com.myflashlab.air.extensions.dependency.androidx.lifecycle</extensionID>
+    <extensionID>com.myflashlab.air.extensions.dependency.googlePlayServices.drive</extensionID>
+    <extensionID>com.myflashlab.air.extensions.dependency.googlePlayServices.base</extensionID>
+    <extensionID>com.myflashlab.air.extensions.dependency.googlePlayServices.basement</extensionID>
+    <extensionID>com.myflashlab.air.extensions.dependency.googlePlayServices.tasks</extensionID>
 
-        <extensionID>com.myflashlab.air.extensions.permissionCheck</extensionID>
-
-        <!-- dependency ANEs https://github.com/myflashlab/common-dependencies-ANE -->
-        <extensionID>com.myflashlab.air.extensions.dependency.overrideAir</extensionID>
-        <extensionID>com.myflashlab.air.extensions.dependency.androidSupport.core</extensionID>
-        <extensionID>com.myflashlab.air.extensions.dependency.androidSupport.v4</extensionID>
-        <extensionID>com.myflashlab.air.extensions.dependency.googlePlayServices.drive</extensionID>
-        <extensionID>com.myflashlab.air.extensions.dependency.googlePlayServices.base</extensionID>
-        <extensionID>com.myflashlab.air.extensions.dependency.googlePlayServices.basement</extensionID>
-        <extensionID>com.myflashlab.air.extensions.dependency.googlePlayServices.tasks</extensionID>
-
-    </extensions>
+  </extensions>
 </application>
