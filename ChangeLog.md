@@ -1,9 +1,15 @@
 FileBrowser Adobe Air Native Extension
 
-*Aug 2, 2019 - V4.2.21*
+*Feb 05, 2020 - V5.0.1*
+- Add some minor improvements
+
+*Dec 28, 2019 - V5.0.0*
+- Add androidx dependencies instead of android support libraries
+
+*Aug 02, 2019 - V4.2.21*
 * Added Android 64-bit Support
 * Supports iOS 10+
-* Removed **.os** property, use ```OverrideAir.os``` instead
+* Removed **.os** property, use `OverrideAir.os` instead
 
 *Feb 18, 2019 - V4.2.2*
 * subclassing the ios native imagepicker window to support AIR app's current orientation
@@ -11,7 +17,7 @@ FileBrowser Adobe Air Native Extension
 *Feb 12, 2019 - V4.2.1*
 * fixed the bug when on iOS, the app's launcher image was shown on iOS 11+ for a few miliseconds
 * When the picker window is open and you take the app to background, the window will be closed now.
-* Added ```isOpen``` property which returns if currently the file-picker window is open or not
+* Added `isOpen` property which returns if currently the file-picker window is open or not
 
 *Nov 17, 2018 - V4.1.6*
 * Works with OverrideAir ANE V5.6.1 or higher
