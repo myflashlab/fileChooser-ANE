@@ -1,10 +1,15 @@
 FileBrowser Adobe Air Native Extension
 
-*Feb 05, 2020 - V5.0.1*
-- Add some minor improvements
-
-*Dec 28, 2019 - V5.0.0*
-- Add androidx dependencies instead of android support libraries
+*Apr 04, 2020 - V5.0.1*
+- Upgraded to Androidx dependencies
+```xml
+<extensionID>com.myflashlab.air.extensions.dependency.overrideAir</extensionID>
+<extensionID>com.myflashlab.air.extensions.dependency.androidx.core</extensionID>
+<extensionID>com.myflashlab.air.extensions.dependency.googlePlayServices.drive</extensionID>
+<extensionID>com.myflashlab.air.extensions.dependency.googlePlayServices.base</extensionID>
+<extensionID>com.myflashlab.air.extensions.dependency.googlePlayServices.basement</extensionID>
+<extensionID>com.myflashlab.air.extensions.dependency.googlePlayServices.tasks</extensionID>
+```
 
 *Aug 02, 2019 - V4.2.21*
 * Added Android 64-bit Support

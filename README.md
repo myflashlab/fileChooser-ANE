@@ -61,8 +61,7 @@ Embedding the ANE:
 	
 	<!-- dependency ANEs https://github.com/myflashlab/common-dependencies-ANE -->
     <extensionID>com.myflashlab.air.extensions.dependency.overrideAir</extensionID>
-    <extensionID>com.myflashlab.air.extensions.dependency.androidSupport.core</extensionID>
-    <extensionID>com.myflashlab.air.extensions.dependency.androidSupport.v4</extensionID>
+    <extensionID>com.myflashlab.air.extensions.dependency.androidx.core</extensionID>
 	<extensionID>com.myflashlab.air.extensions.dependency.googlePlayServices.drive</extensionID>
     <extensionID>com.myflashlab.air.extensions.dependency.googlePlayServices.base</extensionID>
     <extensionID>com.myflashlab.air.extensions.dependency.googlePlayServices.basement</extensionID>
@@ -71,7 +70,7 @@ Embedding the ANE:
 ```
 
 # Requirements
-* Android SDK 15+
+* Android SDK 19+
 * iOS 10.0+
 * AIR SDK 30+
 

@@ -94,7 +94,6 @@
     <!-- dependency ANEs https://github.com/myflashlab/common-dependencies-ANE -->
     <extensionID>com.myflashlab.air.extensions.dependency.overrideAir</extensionID>
     <extensionID>com.myflashlab.air.extensions.dependency.androidx.core</extensionID>
-    <extensionID>com.myflashlab.air.extensions.dependency.androidx.lifecycle</extensionID>
     <extensionID>com.myflashlab.air.extensions.dependency.googlePlayServices.drive</extensionID>
     <extensionID>com.myflashlab.air.extensions.dependency.googlePlayServices.base</extensionID>
     <extensionID>com.myflashlab.air.extensions.dependency.googlePlayServices.basement</extensionID>

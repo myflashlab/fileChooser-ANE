@@ -140,6 +140,7 @@ public class MainFinal extends Sprite
 	{
 		if(_txt)
 		{
+			_txt.y = 150 * (1 / DeviceInfo.dpiScaleMultiplier);
 			_txt.width = stage.stageWidth * (1 / DeviceInfo.dpiScaleMultiplier);
 			
 			C.x = 0;
