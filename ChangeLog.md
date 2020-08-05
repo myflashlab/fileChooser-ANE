@@ -1,5 +1,9 @@
 FileBrowser Adobe Air Native Extension
 
+*Jul 31, 2020 - v6.0.0*
+- Upgrade dependencies to the latest versions.
+- Fixed some minor issues and refactor native codes.
+
 *Apr 04, 2020 - V5.0.1*
 - Upgraded to Androidx dependencies
 ```xml
